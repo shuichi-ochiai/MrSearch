@@ -14,6 +14,6 @@
 - [GitのGUIツールであるSourcetreeのインストール方法、使い方](https://tracpath.com/bootcamp/learning_git_sourcetree.html)
 - [Githubの使い方](https://techacademy.jp/magazine/6235)
 
-## SlackBotについて
+## slackbotについて
 - [slackbot](https://github.com/lins05/slackbot)
 - [slackbotのチュートリアル](https://qiita.com/sukesuke/items/1ac92251def87357fdf6)
