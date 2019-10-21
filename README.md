@@ -17,3 +17,7 @@
 ## slackbotについて
 - [slackbot](https://github.com/lins05/slackbot)
 - [slackbotのチュートリアル](https://qiita.com/sukesuke/items/1ac92251def87357fdf6)
+
+## ぐるなびAPIについて
+- [ぐるなびのレストラン検索API仕様](https://api.gnavi.co.jp/api/manual/restsearch/)
+- [Python3におけるぐるなびAPIのサンプル](https://qiita.com/ume1126/items/14e9c1b0662acc289b19)
