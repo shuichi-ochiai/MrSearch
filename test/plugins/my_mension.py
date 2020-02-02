@@ -1,3 +1,4 @@
+import os
 from slackbot.bot import respond_to  # @botname: で反応するデコーダ
 from slackbot.bot import listen_to  # チャネル内発言で反応するデコーダ
 from slackbot.bot import default_reply  # 該当する応答がない場合に反応するデコーダ
@@ -40,7 +41,7 @@ def gurunavi_func(message):
 
     # パラメータの設定
     params = {}
-    params["keyid"] = "***************"  # 取得したアクセスキー
+    params["keyid"] = os.environ["GURUNAVI_API_TOKEN"]  # 取得したアクセスキー
     params["freeword"] = "新橋,ランチ,10000"
 
     # リクエスト結果
