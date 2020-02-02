@@ -8,6 +8,22 @@
   - [pipのインストール方法(Win, Mac, Linux)](https://qiita.com/suzuki_y/items/3261ffa9b67410803443)
 - 当プロジェクトでは既にPipfileが用意されているので、導入後プロジェクト直下で`pipenv install`を実行すれば良い
 
+### 各APIKey
+- 必要なAPIKeyは、環境変数から読み込む仕様にしている
+- SlackBot
+  - `SLACK_BOT_API_TOKEN`へセット
+- ぐるなびAPI
+  - `GURUNAVI_API_TOKEN`へセット
+  
+- APIKey設定方法
+  - .bash_profile
+    - ```
+        export SLACK_BOT_API_TOKEN=*********
+        export GURUNAVI_API_TOKEN=*********
+      ```
+  - PyCharm
+    - `run` -> `Edit Config` -> `Environment variables` -> key,valueで設定 
+
 ## Gitについて
 - [Git入門](https://qiita.com/nnahito/items/e546b27f73e7be131d4e)
 - [Gitのインストール方法](https://qiita.com/toshi-click/items/dcf3dd48fdc74c91b409)
