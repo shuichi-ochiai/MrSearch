@@ -1,4 +1,7 @@
+import os
 from slackbot.bot import respond_to
+
+import requests
 
 
 @respond_to('助けて')
@@ -10,12 +13,23 @@ def help_command(message):
 
 @respond_to('メシ')
 def search_command(message):
-    search_word = message.body['text']
+    # search_wordは、'メシ'も含まれているので、スペースでsplit
+    search_word = message.body['text'].split()[1]
 
-    # TODO: search_wordは、'メシ'も含まれているので、その対策が必要
+    # ぐるなびAPIを呼ぶ
+    # レストラン検索APIのURL
+    url = "https://api.gnavi.co.jp/RestSearchAPI/v3/"
 
-    # TODO: ぐるなびAPIを呼ぶ
+    # パラメータの設定
+    params = {"keyid": os.environ["GURUNAVI_API_TOKEN"], "freeword": search_word, "hit_per_page": 5}
 
-    # TODO: responseを整形してreply
+    # リクエスト結果
+    result_api = requests.get(url, params).json()
 
-    print(search_word)
+    # responseを整形してreply
+    rest_list = result_api['rest']
+    if len(rest_list) == 0:
+        message.send("お店が見つかりませんでした・・・・")
+
+    for rest in rest_list:
+        message.send(rest['url'])
